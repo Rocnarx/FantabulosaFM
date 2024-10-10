@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Accesible</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Radio Accesible</h1>
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#programs">Programas</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" aria-labelledby="home-title">
+            <h2 id="home-title">Bienvenidos a Radio Accesible</h2>
+            <p>Escucha tus programas favoritos en cualquier momento.</p>
+
+            <!-- Reproductor de Radio Accesible -->
+            <div role="region" aria-labelledby="player-title">
+                <h3 id="player-title">Reproductor de Radio</h3>
+                <audio id="radioPlayer" controls aria-label="Reproductor de radio en vivo">
+                    <source src="https://fantabulosafm.com/envivo" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de radio en vivo.
+                </audio>
+                <p id="status">Estado: Detenido</p>
+            </div>
+
+            <button onclick="playRadio()" aria-label="Iniciar la radio">Reproducir Radio</button>
+            <button onclick="pauseRadio()" aria-label="Pausar la radio">Pausar Radio</button>
+            <button onclick="stopRadio()" aria-label="Detener la radio">Detener Radio</button>
+        </section>
+
+        <section id="programs" aria-labelledby="programs-title">
+            <h2 id="programs-title">Nuestros Programas</h2>
+            <ul>
+                <li>Pa</li>
+                <li>Pagueme el </li>
+                <li>gym</li>
+            </ul>
+        </section>
+
+
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contacto</h2>
+        <form action="procesar-formulario.php" method="POST">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" aria-required="true" aria-describedby="nameHelp" required>
+            <span id="nameHelp">Ingresa tu nombre completo.</span>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" aria-required="true" aria-describedby="emailHelp" required>
+            <span id="emailHelp">Ingresa un correo electrónico válido.</span>
+        
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" aria-required="true" aria-describedby="messageHelp" required></textarea>
+            <span id="messageHelp">Escribe tu mensaje aquí.</span>
+        
+            <button type="submit">Enviar</button>
+        </form>
+        </section>
+        
+
+         
+    <h2>Comentarios sobre Accesibillidad</h2>
+    <!-- Formulario HTML -->
+    <form action="procesar-feedback.php" method="POST">
+
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+
+    <!-- Parte JavaScript para mostrar el pop-up -->
+    
+
+    </main>
+
+    <script>
+        const player = document.getElementById('radioPlayer');
+        const status = document.getElementById('status');
+
+        function playRadio() {
+            if (player.paused) {
+                player.play();  // Reanuda la reproducción
+                status.innerText = "Estado: Reproduciendo"
+            } else {
+                player.pause(); // Pausa el audio
+                status.innerText = "Estado: Pausado"
+            }
+        }
+
+        function increaseVolume() {
+            if (player.volume < 1) {
+                player.volume = Math.min(player.volume + 0.1, 1); // Sube volumen
+            }
+        }
+
+        // Función para disminuir el volumen
+        function decreaseVolume() {
+            if (player.volume > 0) {
+                player.volume = Math.max(player.volume - 0.1, 0); // Baja volumen
+            }
+        }
+
+
+        document.addEventListener('keydown', function (event) {
+        if (event.altKey && event.code === 'KeyP') {
+            playRadio();
+        }
+
+        if (event.altKey && event.code === 'ArrowUp') {
+                increaseVolume();
+            }
+
+            // Detectar Alt + Flecha Abajo para bajar volumen
+            if (event.altKey && event.code === 'ArrowDown') {
+                decreaseVolume();
+            }
+        
+    });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Radio Accesible</p>
+        <div class="social-buttons">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
