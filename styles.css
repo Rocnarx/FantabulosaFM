@@ -1,10 +1,11 @@
-/* Estilo para el encabezado y el menú de navegación */
 header {
-    background-color: #333;
+    background-color: #000;
     color: #fff;
     padding: 15px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px #00000033;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 nav ul {
@@ -12,12 +13,12 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 50px; /* Espacio entre los botones */
-    margin: 10px 0 0;
+    gap: 50px;
+    margin-top: 10px;
 }
 
 nav ul li {
-    margin: 0;
+    margin-top: 30px;
 }
 
 nav ul li a {
@@ -25,22 +26,21 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     padding: 10px 20px;
-    border: 2px solid transparent; /* Borde transparente inicialmente */
-    border-radius: 5px;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 2px solid white;
+    border-radius: 8px;
 }
 
 nav ul li a:hover {
-    background-color: #555; /* Color de fondo al pasar el ratón */
-    border-color: white; /* Muestra el borde al pasar el ratón */
+    background-color: #555;
+    border-color: white;
 }
 
 nav ul li a:focus {
-    outline: none; /* Elimina el contorno al hacer foco */
-    background-color: #444; /* Color de fondo al enfocar con teclado */
-    border-color: white; /* Muestra el borde al enfocar */
+    outline: none;
+    background-color: #444;
+    border-color: white;
 }
-
 
 main {
     padding: 20px;
@@ -48,7 +48,8 @@ main {
     margin: 0 auto;
     background-color: #f9f9f9;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #333;
+    box-shadow: 0 4px 8px hsl(251, 100%, 50%);
 }
 
 h2 {
@@ -57,7 +58,7 @@ h2 {
     padding-bottom: 10px;
 }
 
-p {
+p, ul {
     font-size: 18px;
     line-height: 1.6;
 }
@@ -65,24 +66,17 @@ p {
 button {
     background-color: #333;
     color: white;
-    border: none;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border: 2px solid white;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
     background-color: #555;
 }
 
-ul {
-    padding-left: 20px;
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-/* Estilo para el formulario de contacto */
 form {
     display: flex;
     flex-direction: column;
@@ -109,15 +103,17 @@ button[type="submit"] {
     align-self: flex-start;
 }
 
-/* Estilo para el pie de página */
 footer {
-    background-color: #333;
+    background-color: #000;
     color: #fff;
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    position: relative; /* Cambiado de absolute a relative */
-    clear: both; /* Asegura que el pie de página se coloque debajo del contenido */
+    position: relative;
+    clear: both;
+    border: 2px solid #333;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
 .social-buttons {
@@ -130,18 +126,16 @@ footer {
 .social-buttons a {
     color: white;
     padding: 10px;
-    border: 2px solid white; /* Define el recuadro */
-    border-radius: 8px; /* Opcional: redondea las esquinas */
+    border: 2px solid white;
+    border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     text-align: center;
-    width: 50px; /* Tamaño fijo del botón */
-    height: 50px; /* Tamaño fijo del botón */
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none; /* Elimina subrayados */
-    outline: none; /* Elimina el contorno al hacer foco */
-    box-shadow: none; /* Elimina cualquier sombra de caja */
+    text-decoration: none;
 }
 
 .social-buttons a:hover {
@@ -150,7 +144,7 @@ footer {
 }
 
 .social-buttons i {
-    font-size: 24px; /* Tamaño del icono */
+    font-size: 24px;
 }
 
 .high-contrast {
@@ -165,3 +159,16 @@ footer {
     color: #000;
 }
 
+body {
+    background-color: #333;
+    padding: 20px;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    box-shadow: 0 0 0 10px #000;
+}
