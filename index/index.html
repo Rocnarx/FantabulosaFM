@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantabulosa FM</title>
+    <link rel="stylesheet" href="..\styles\styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header style="position: fixed;">
+        <h1 id="header-title" aria-live="polite">Fantabulosa FM</h1>
+        <nav aria-labelledby="header-title" aria-label="Menú principal">
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#radio">Reproductor</a></li>
+                <li><a href="#programs">Programas</a></li>
+                <li><a href="#team">Nuestro Equipo</a></li>
+            </ul>
+        </nav>
+        <button id="serverStatus" aria-live="polite" aria-label="Estado del servidor: Desconectado">
+            Desconectado
+        </button>
+    </header>
+
+    <main>
+
+        <div class="anchor-offset" id="home"></div>
+        <section aria-labelledby="home-title" class="home-section">
+            <h2 id="home-title">Bienvenidos a <span lang="en">Fantabulosa FM</span></h2>
+            <p class="home-subtitle" aria-live="polite">
+                La radio que te conecta con el mundo.
+            </p>
+        
+            <div class="instructions" role="region" aria-labelledby="instructions-title" aria-live="polite">
+                <h3 id="instructions-title">Instrucciones de Accesibilidad del Reproductor</h3>
+                <ul>
+                    <li>
+                        <strong>Presione <kbd aria-label="Tecla Alt">Alt</kbd> + <kbd aria-label="Tecla P">P</kbd></strong> 
+                        para pausar y reproducir la radio.
+                    </li>
+                    <li>
+                        <strong>Presione <kbd aria-label="Tecla Alt">Alt</kbd> + <kbd aria-label="Flecha hacia arriba">&uarr;</kbd></strong> 
+                        para subir volumen.
+                    </li>
+                    <li>
+                        <strong>Presione <kbd aria-label="Tecla Alt">Alt</kbd> + <kbd aria-label="Flecha hacia abajo">&darr;</kbd></strong> 
+                        para bajar volumen.
+                    </li>
+                    <li>
+                        <strong>Presione <kbd aria-label="Tecla Alt">Alt</kbd> + <kbd aria-label="Tecla M">M</kbd></strong> 
+                        para silenciar y reactivar el sonido.
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="anchor-offset" id="radio"></div>
+        <section id="radio" aria-labelledby="radio-title" class="radio-section">
+            
+            <div role="region" aria-labelledby="player-title" class="radio-container">
+                <h2 id="player-title">Reproductor de Radio</h2>
+        
+                <p id="currentSong" aria-live="polite">Canción actual: Cargando...</p>
+                
+                <audio id="radioPlayer" controls aria-label="Reproductor de radio en vivo">
+                    <source src="https://fantabulosafm.com/envivo" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de radio en vivo.
+                </audio>
+        
+                <p id="status" aria-live="polite">Estado: Detenido</p>
+        
+                <div class="radio-buttons">
+                    <button onclick="playRadio()" aria-label="Iniciar la radio" class="btn">
+                        <i class="fas fa-play"></i> Reproducir
+                    </button>
+                    <button onclick="playRadio()" aria-label="Pausar la radio" class="btn">
+                        <i class="fas fa-pause"></i> Pausar
+                    </button>
+                    <button onclick="stopRadio()" aria-label="Detener la radio" class="btn">
+                        <i class="fas fa-stop"></i> Detener
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <div class="anchor-offset" id="programs"></div>
+        <section id="programs" aria-labelledby="programs-title" class="programs-section">
+
+            
+            <h2 id="programs-title">Nuestros Programas</h2>
+            
+            <div class="programs-container" role="list">
+                <div class="program-card" role="listitem" tabindex="0" aria-label="Programa: Pa">
+                    <h3>Pa</h3>
+                    <p>Un programa lleno de historias increíbles y entretenimiento.</p>
+                </div>
+                
+                <div class="program-card" role="listitem" tabindex="0" aria-label="Programa: Pagueme el">
+                    <h3>Pagueme el</h3>
+                    <p>Explora temas financieros y aprende a manejar tu dinero.</p>
+                </div>
+                
+                <div class="program-card" role="listitem" tabindex="0" aria-label="Programa: Gym">
+                    <h3>Gym</h3>
+                    <p>Motivación, ejercicios y salud para un mejor estilo de vida.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="anchor-offset" id="team"></div>
+        <section id="team" aria-labelledby="team-title" class="team-section">
+            <h2 id="team-title">Nuestro Equipo</h2>
+            <div class="team-container" role="list">
+                <div class="team-card" role="listitem">
+                    <img src="https://via.placeholder.com/250x150?text=Director" 
+                         alt="Retrato de Fernando Lancheros, Director de Fantabulosa FM" 
+                         class="team-photo">
+                    <div class="team-info">
+                        <h3>Fernando Lancheros</h3>
+                        <p>Director</p>
+                        <p>"Liderando Fantabulosa FM con pasión y dedicación."</p>
+                    </div>
+                </div>
+                <div class="team-card" role="listitem">
+                    <img src="https://via.placeholder.com/250x150?text=Webmaster" 
+                         alt="Retrato de Christian Lancheros, Webmaster de Fantabulosa FM" 
+                         class="team-photo">
+                    <div class="team-info">
+                        <h3>Christian Lancheros</h3>
+                        <p>Webmaster</p>
+                        <p>"Desarrollando experiencias digitales para Fantabulosa FM."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Fantabulosa FM</p>
+        <div class="social-buttons">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/573156588841?text=Hola%2C%20vengo%20de%20Fantabulosa%20FM" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const player = document.getElementById('radioPlayer');
+        const status = document.getElementById('status');
+
+        function playRadio() {
+            if (player.paused) {
+                player.play();
+                status.innerText = "Estado: Reproduciendo";
+            } else {
+                player.pause();
+                status.innerText = "Estado: Pausado";
+            }
+        }
+
+        function stopRadio() {
+            player.pause();
+            player.currentTime = 0;
+            status.innerText = "Estado: Detenido";
+        }
+
+        function muteRadio() {
+        player.muted = !player.muted; // Alterna entre mute y unmute
+        status.innerText = player.muted ? "Estado: Silenciado" : "Estado: Reproduciendo";
+
+        
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.altKey && event.key.toLowerCase() === 'p') {
+            playRadio();
+        } else if (event.altKey && event.key === 'ArrowUp') {
+            player.volume = Math.min(player.volume + 0.1, 1); // Subir volumen
+        } else if (event.altKey && event.key === 'ArrowDown') {
+            player.volume = Math.max(player.volume - 0.1, 0); // Bajar volumen
+        } else if (event.altKey && event.key.toLowerCase() === 'm') {
+            muteRadio(); // Silenciar o activar el sonido
+        }
+    });
+    </script>
+    <script src="..\scripts\updateSong.js" defer></script>
+    <script src="..\scripts\updateStatus.js" defer></script>
+    <script src="..\scripts\transition.js" defer></script>
+
+    
+</body>
+</html>
