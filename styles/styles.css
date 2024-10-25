@@ -1,91 +1,117 @@
-/* Header más grande con estilo neumórfico */
+/* Estilos generales para el header */
 header {
     background-color: #282c34;
-    padding: 25px 60px; /* Aumentado para más altura */
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     border-radius: 20px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(255, 255, 255, 0.1);
-    width: 90%;
-    margin: 30px auto; /* Aumentado para más separación */
+    width: 100%;
     position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
     z-index: 1000;
+    color: #f4f4f4; /* Color de texto claro */
 }
 
-/* Título del header más grande */
+/* Título del header */
 header h1 {
-    font-size: 32px; /* Aumentado para mayor visibilidad */
-    font-weight: bold;
-    color: #fff;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: 1.5px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    color: #ffffff; /* Blanco para mayor contraste */
 }
 
-/* Contenedor de navegación con espacio */
+/* Estilos para la navegación y el botón de estado */
 nav {
     flex-grow: 1;
-    margin-left: 40px;
+    display: flex;
+    justify-content: center; /* Centrar la navegación */
 }
 
-/* Lista de navegación */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 15px;
     margin: 0;
     padding: 0;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap; /* Ajusta la lista de navegación en varias líneas */
 }
 
-/* Botones de navegación más grandes */
 nav ul li a {
     color: #f4f4f4;
     text-decoration: none;
-    font-size: 18px; /* Aumentado para mayor legibilidad */
-    font-weight: 600;
-    padding: 12px 25px; /* Aumentado para más área de clic */
+    font-size: 16px;
+    padding: 10px 20px;
     background-color: #333a45;
-    border: 1px solid transparent;
-    border-radius: 15px;
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5), -6px -6px 12px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
     transition: all 0.3s ease;
-    position: relative;
 }
 
-/* Efecto de hover con relieve */
 nav ul li a:hover {
     background-color: #4a5262;
-    box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.6), inset -6px -6px 12px rgba(255, 255, 255, 0.1);
-    transform: translateY(-3px);
     color: #e2e2e2;
 }
 
-/* Efecto de foco */
-nav ul li a:focus {
-    outline: 2px solid #4a90e2;
-    background-color: #394251;
-}
-
-/* Botón de estado del servidor más grande */
+/* Botón de estado del servidor */
 #serverStatus {
-    margin-left: 40px;
-    padding: 12px 30px; /* Aumentado para mayor área de clic */
+    margin-left: auto; /* Empuja el botón al extremo derecho */
+    margin-right: 45px; /* Añade espacio adicional a la derecha */
+    padding: 10px 20px;
     background-color: #e74c3c;
     color: white;
-    font-size: 16px; /* Aumentado para mejor visibilidad */
+    font-size: 16px;
     font-weight: bold;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5), -6px -6px 12px rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
 }
+
+/* Responsividad en pantallas medianas */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column; /* Coloca los elementos en columna */
+        align-items: center;
+    }
+
+    nav {
+        margin-top: 10px; /* Agrega espaciado entre la navegación y el botón */
+    }
+
+    nav ul {
+        flex-direction: column; /* Ajusta la navegación en columna */
+        align-items: center;
+        gap: 10px; /* Reduce el espacio entre los elementos */
+    }
+
+    #serverStatus {
+        margin-top: 10px; /* Espaciado superior para el botón */
+        margin-left: 0; /* Elimina el empuje a la derecha */
+    }
+}
+
+/* Responsividad en dispositivos móviles */
+@media (max-width: 480px) {
+    nav ul {
+        gap: 5px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    #serverStatus {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
+
 
 /* Estado "Conectado" */
 #serverStatus.live {
