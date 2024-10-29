@@ -1,4 +1,4 @@
-/* Estilos generales para el header */
+
 header {
     background-color: #282c34;
     padding: 15px 20px;
@@ -13,19 +13,19 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    color: #f4f4f4; /* Color de texto claro */
+    color: #f4f4f4; 
 }
 
-/* Título del header */
+
 header h1 {
-    color: #ffffff; /* Blanco para mayor contraste */
+    color: #ffffff; 
 }
 
-/* Estilos para la navegación y el botón de estado */
+
 nav {
     flex-grow: 1;
     display: flex;
-    justify-content: center; /* Centrar la navegación */
+    justify-content: center; 
 }
 
 nav ul {
@@ -34,7 +34,7 @@ nav ul {
     gap: 15px;
     margin: 0;
     padding: 0;
-    flex-wrap: wrap; /* Ajusta la lista de navegación en varias líneas */
+    flex-wrap: wrap; 
 }
 
 nav ul li a {
@@ -52,10 +52,10 @@ nav ul li a:hover {
     color: #e2e2e2;
 }
 
-/* Botón de estado del servidor */
+
 #serverStatus {
-    margin-left: auto; /* Empuja el botón al extremo derecho */
-    margin-right: 45px; /* Añade espacio adicional a la derecha */
+    margin-left: auto; 
+    margin-right: 45px;
     padding: 10px 20px;
     background-color: #e74c3c;
     color: white;
@@ -67,30 +67,30 @@ nav ul li a:hover {
     transition: all 0.3s ease;
 }
 
-/* Responsividad en pantallas medianas */
+
 @media (max-width: 1024px) {
     header {
-        flex-direction: column; /* Coloca los elementos en columna */
+        flex-direction: column; 
         align-items: center;
     }
 
     nav {
-        margin-top: 10px; /* Agrega espaciado entre la navegación y el botón */
+        margin-top: 10px; 
     }
 
     nav ul {
-        flex-direction: column; /* Ajusta la navegación en columna */
+        flex-direction: column; 
         align-items: center;
-        gap: 10px; /* Reduce el espacio entre los elementos */
+        gap: 10px; 
     }
 
     #serverStatus {
-        margin-top: 10px; /* Espaciado superior para el botón */
-        margin-left: 0; /* Elimina el empuje a la derecha */
+        margin-top: 10px; 
+        margin-left: 0; 
     }
 }
 
-/* Responsividad en dispositivos móviles */
+
 @media (max-width: 480px) {
     nav ul {
         gap: 5px;
@@ -113,21 +113,19 @@ nav ul li a:hover {
 
 
 
-/* Estado "Conectado" */
+
 #serverStatus.live {
     background: linear-gradient(135deg, #4caf50, #2e7d32);
 }
 
-/* Hover del botón de estado */
 #serverStatus:hover {
     transform: scale(1.05);
     box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.6), inset -6px -6px 12px rgba(255, 255, 255, 0.1);
 }
 
-/* Ajuste en el margen superior del main */
 main {
     
-    margin-top: 120px; /* Ajustado para evitar superposición con el header más grande */
+    margin-top: 120px;
 }
 
 
@@ -258,28 +256,25 @@ body {
 
 
 .anchor-offset {
-    scroll-margin-top: 100px; /* Ajusta este valor a la altura de tu header fijo */
+    scroll-margin-top: 100px;
 }
 
 
-/* Estado inicial del desvanecimiento */
 body {
     opacity: 1;
     transition: opacity 0.5s;
 
 }
 
-/* Animación de desvanecimiento */
+
 body.fade {
     opacity: 0;
 }
 
-/* Animación de entrada */
 body.fade-in {
     opacity: 1;
 }
 
-/* Estilos para la sección del equipo */
 .team-section {
     padding: 40px 20px;
     background-color: #f4f4f4;
@@ -346,7 +341,6 @@ body.fade-in {
 
 
 
-/* Estilo para la sección de bienvenida */
 .home-section {
     padding: 40px 20px;
     background-color: #f9f9f9;
