@@ -531,4 +531,17 @@ audio {
     border: 2px solid #0a74da;
 }
 
+.contador {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #ff6347;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
