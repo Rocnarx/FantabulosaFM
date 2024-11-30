@@ -10,8 +10,13 @@
 <body>
 
     <header style="position: fixed;">
-        <h1 id="header-title" aria-live="polite">Fantabulosa FM</h1>
+        
+        <img src="..\images\logoFFM.png" 
+                             alt="Logotipo Fantabulosa FM"
+                             class="logotipo" 
+                             aria-hidden="true">
         <nav aria-labelledby="header-title" aria-label="Menú principal">
+            
             <ul>
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#radio">Reproductor</a></li>
@@ -19,9 +24,11 @@
                 <li><a href="#team">Nuestro Equipo</a></li>
             </ul>
         </nav>
+
         <button id="serverStatus" aria-live="polite" aria-label="Estado del servidor: Desconectado">
             Desconectado
         </button>
+        
     </header>
 
     <main>
@@ -87,25 +94,22 @@
         </section>
         
         <div class="anchor-offset" id="programs"></div>
-        <section id="programs" aria-labelledby="programs-title" class="programs-section">
 
-            
+
+        <section id="programs" aria-labelledby="programs-title" class="programs-section">
             <h2 id="programs-title">Nuestros Programas</h2>
             
             <div class="programs-container" role="list">
-                <div class="program-card" role="listitem" tabindex="0" aria-label="Programa: Pa">
-                    <h3>Pa</h3>
-                    <p>Un programa lleno de historias increíbles y entretenimiento.</p>
-                </div>
-                
-                <div class="program-card" role="listitem" tabindex="0" aria-label="Programa: Pagueme el">
-                    <h3>Pagueme el</h3>
-                    <p>Explora temas financieros y aprende a manejar tu dinero.</p>
-                </div>
-                
-                <div class="program-card" role="listitem" tabindex="0" aria-label="Programa: Gym">
-                    <h3>Gym</h3>
-                    <p>Motivación, ejercicios y salud para un mejor estilo de vida.</p>
+                <div class="program-card" role="listitem" tabindex="0" aria-label="Gran estreno Fantabulosa FM, 1 de diciembre">
+                    <div class="program-image-container">
+                        <img src="..\images\publicidad1d.jpg" 
+                             alt="Imagen del programa Gran Estreno"
+                             class="program-image" 
+                             aria-hidden="true">
+                        <span class="program-text" aria-live="polite">
+                            Gran estreno Fantabulosa FM, 1 de diciembre. Te esperamos.
+                        </span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -142,13 +146,13 @@
     <footer>
         <p>&copy; 2024 Fantabulosa FM</p>
         <div class="social-buttons">
-            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+            <a href="https://web.facebook.com/people/Fantabulosa-FM/61568315203505/?_rdc=1&_rdr" target="_blank" aria-label="Facebook">
                 <i class="fab fa-facebook-f"></i>
             </a>
             <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
                 <i class="fab fa-twitter"></i>
             </a>
-            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+            <a href="https://www.instagram.com/fantabulosafm " target="_blank" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
             <a href="https://wa.me/573206292992?text=Hola%2C%20vengo%20de%20Fantabulosa%20FM" target="_blank" aria-label="WhatsApp">
